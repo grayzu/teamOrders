@@ -1,0 +1,39 @@
+#searchTxt {
+    width: 40rem;
+}
+
+.card {
+    width: 220px;
+    height: 280px;
+    border: 2px solid #ccc;
+}
+
+.filterBtn {
+    min-width: 125px;
+}
+
+.qty {
+    width: 40px;
+}
+
+.desc {
+    height: 60px;
+}
+
+.cardImage {
+    width: 120px;
+    height: 120px;
+}
+
+li .item-left {
+    float: left;
+}
+
+li .item-right {
+    float: right;
+}
+
+.masonry_element {
+    padding-bottom: 10px;
+    padding-right: 10px;
+}

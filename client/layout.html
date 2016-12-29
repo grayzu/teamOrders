@@ -1,16 +1,21 @@
 <template name="layout">
     {{>header}}
+    {{#if currentUser}}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-sm-2">
                 {{>Template.dynamic template=sidebar}}
             </div>
-            <div class="col-md-8">
+            <div class="col-sm-7">
                 {{>Template.dynamic template=main}}
             </div>
-            <div class="col-md-2">
+            <div class="col-sm-3">
                 {{>Template.dynamic template=cart}}
             </div>
         </div>
     </div>
+    {{else}}
+        <!--TODO: Pretty this up a bit. Possibly add 529 logo.-->
+        Please login
+    {{/if}}
 </template>

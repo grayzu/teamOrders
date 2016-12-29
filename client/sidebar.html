@@ -1,0 +1,64 @@
+<template name="sidebar">
+    <div class="brandFilters">
+        <div class="filter-label">Filter by Brand:</div> 
+        <div class="btn-group-vertical brandsGroup float-xs-right" role="group">
+            {{#each brands}}
+                {{> brand}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="familyFilters">
+        <div class="filter-label">Filter by Family:</div> 
+        <div class="btn-group-vertical brandsGroup float-xs-right" role="group">
+            {{#each families}}
+                {{> family}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="categoryFilters">
+        <div class="filter-label">Filter by Category:</div> 
+        <div class="btn-group-vertical brandsGroup float-xs-right" role="group">
+            {{#each categories}}
+                {{> category}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="rideTypeFilters">
+        <div class="filter-label">Filter by Rider Type:</div> 
+        <div class="btn-group-vertical brandsGroup float-xs-right" role="group">
+            {{#each rideTypes}}
+                {{> rideType}}
+            {{/each}}
+        </div>
+    </div>
+    <!-- Fit filter not implemented
+    <div class="fitFilters">
+        <div class="filter-label">Filter by Fits:</div> 
+        <div class="btn-group-vertical brandsGroup float-xs-right" role="group">
+            {{#each fits}}
+                {{> fit}}
+            {{/each}}
+        </div>
+    </div>
+    -->
+</template>
+
+<template name="brand">
+    <button type="button" class="btn btn-secondary btn-sm filterBtn brandBtn">{{ this}}</button>
+</template>
+
+<template name="category">
+    <button type="button" class="btn btn-secondary btn-sm filterBtn categoryBtn">{{ this}}</button>
+</template>
+
+<template name="fit">
+    <button type="button" class="btn btn-secondary btn-sm filterBtn fitBtn">{{ this}}</button>
+</template>
+
+<template name="rideType">
+    <button type="button" class="btn btn-secondary btn-sm filterBtn rideTypeBtn">{{ this}}</button>
+</template>
+
+<template name="family">
+    <button type="button" class="btn btn-secondary btn-sm filterBtn familyBtn">{{ this}}</button>
+</template>

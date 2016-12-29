@@ -1,0 +1,7 @@
+<template name="resultsBySearch">
+    {{#masonryContainer id='masonryContainer' gutter=1 columnWidth=10 transitionDuration='0.1s'}}
+    {{#each productsbysearch}}
+       {{> product}}
+    {{/each}}
+    {{/masonryContainer}}
+</template>

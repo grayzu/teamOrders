@@ -1,0 +1,19 @@
+<template name="product">
+    
+     {{#masonryElement 'masonryContainer'}}
+     <div class="card">
+        <img class="card-img-top cardImage" src="..." alt="Card image cap">
+        <div class="card-block">
+            <p class="card-text desc">{{ Description}}</p>
+            <h4 class="card-title price">{{currency Price}}</h4>
+            <div class="input-group">
+                <a target="_blank" href={{ MoreInfoURI}} class="btn btn-sm info">More Info</a>
+                <input class="qty itemQty" type="number" name="itemQty" min="1" value="1">
+                <a href="#" class="btn btn-info btn-sm AddtoCart">Add</a>
+            </div>
+            
+        </div>
+    </div>
+    {{/masonryElement}} 
+    
+</template>

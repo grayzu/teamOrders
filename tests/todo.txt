@@ -1,0 +1,4 @@
+packages to add to streamline testing app
+xolvio:cucumber
+velocity:console-reporter
+sanjo:jasmine

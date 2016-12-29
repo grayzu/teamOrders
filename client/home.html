@@ -1,0 +1,7 @@
+<template name="home">
+    {{#masonryContainer id='masonryContainer' columnWidth=10 transitionDuration='0.1s'}}
+    {{#each products}}
+       {{> product}}
+    {{/each}}
+    {{/masonryContainer}}
+</template>

@@ -1,0 +1,36 @@
+[
+    {
+        "SKU":  "11.5015.048.240",
+        "Brand":  "Avid",
+        "Category":  "Accessories",
+        "Family":  null,
+        "RidingType":  [
+                           "Cross Country",
+                           "Trail",
+                           "Enduro",
+                           "Gravity"
+                       ],
+        "Fits":  null,
+        "ImageURI":  null,
+        "MoreInfoURI":  null,
+        "Description":  "MATCHMAKER X CLAMP BLACK RIGHT - BLACK BOLT ( Use with Guide/Level Brakes)",
+        "Price":  999
+    },
+    {
+        "SKU":  "11.5015.048.140",
+        "Brand":  "Avid",
+        "Category":  "Accessories",
+        "Family":  null,
+        "RidingType":  [
+                           "Cross Country",
+                           "Trail",
+                           "Enduro",
+                           "Gravity"
+                       ],
+        "Fits":  null,
+        "ImageURI":  null,
+        "MoreInfoURI":  null,
+        "Description":  "MATCHMAKER X CLAMP BLACK LEFT - BLACK BOLT (Use with Guide/Level Brakes)",
+        "Price":  8999
+    }
+]

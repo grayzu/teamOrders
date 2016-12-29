@@ -1,0 +1,84 @@
+<template name="checkout">
+    <div class="modal fade" id="checkoutDialog" role="dialog"
+     aria-labelledby="myModalLabel1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close orderDisagree" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Finalize your Order</h4>
+                </div>
+                <div class="modal-body pre-scrollable">
+                    {{#if currentUser}}
+                    <div class="itemization">
+                        <div class="row itemHeaders">
+                            <div class="col-sm-2 colHeader">
+                                SKU
+                            </div>
+                            <div class="col-sm-5 colHeader">
+                                Description
+                            </div>
+                            <div class="col-sm-2 colHeader">
+                                Price
+                            </div>
+                            <div class="col-sm-1 colHeader">
+                                Qty
+                            </div>
+                            <div class="col-sm-2 colHeader">
+                                SubTotal
+                            </div>
+                        </div>
+                        <div class="row itemDetails">
+                            {{#each order.itemSummary}}
+                            <div class="col-sm-2 itemSKU">
+                                {{SKU}}
+                            </div>
+                            <div class="col-sm-5 itemTitle">
+                                {{Description}}
+                            </div>
+                            <div class="col-sm-2 itemPrice">
+                                {{currency Price}}
+                            </div>
+                            <div class="col-sm-1 itemQty">
+                                {{Qty}}
+                            </div>
+                            <div class="col-sm-2 itemSubTotal">
+                                {{currency SubTotal}}
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+
+                    <div class="teamOverhead">
+                        <div class="row">
+                            <div class="col-sm-10 teamFee">
+                                Fee based on percentage of your order:
+                            </div>
+                            <div class="col-sm-2">
+                                {{currency order.teamDues.orderPercent}} 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-10 teamDues">
+                                Team anual dues:
+                            </div>
+                            <div class="col-sm-2">
+                                {{currency order.teamDues.dues}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grandTotal">
+                        {{order.grandTotal}}
+                    </div>
+                    {{/if}}
+                </div>
+                <div class="modal-footer">
+                    <div class="summaryText">You Agree to pay the above within 2 weeks of finalizing this order.</div>
+                    <button id="checkoutCloseBtn" type="button" class="btn btn-danger orderDisagree" data-dismiss="modal">I Disagree</button>
+                    <button id="checkoutAgreeBtn" type="button" class="btn btn-success" data-dismiss="modal">I Agree</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

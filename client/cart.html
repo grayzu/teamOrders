@@ -1,0 +1,38 @@
+<template name="cart">
+    <div class="row">
+        <div class="col-sm-6">
+            <h4>My Cart</h4>
+        </div>
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-info btn-sm checkoutBtn" data-toggle="modal" data-target="#checkoutDialog">
+            Finalize
+            </button>
+        </div>
+    </div>
+
+    {{#if currentUser}}
+        <ul class="list-unstyled">
+        {{#each cartItems}}
+            <li>
+                <span class="item">
+                    <span class="item-left">
+                        <span class="item-info">
+                            <span>
+                                <label class="badge">{{qty}}</label>
+                            </span>
+                            <span>{{Description}}</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                            {{currency Price}} &nbsp;
+                            <button id="delFromCart" class="btn btn-xs btn-danger pull-right">x</button>
+                    </span>
+                </span>
+            </li>
+        {{/each}}
+        </ul>
+    {{/if}}
+    
+    {{> checkout}}
+
+</template>
