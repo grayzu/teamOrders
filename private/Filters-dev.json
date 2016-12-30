@@ -1,0 +1,41 @@
+[
+    {
+        "name":"Brands",
+        "values":[
+            "SRAM",
+            "RockShox"
+        ]
+    },
+    {
+        "name":"Families",
+        "values":[
+            "Eagle",
+            "Guide Ultimate",
+            "Level Ultimate"
+        ]
+    },
+    {
+        "name":"RideTypes",
+        "values":[
+            "Cross Country",
+            "Trail",
+            "Enduro",
+            "Gravity",
+            "Road"
+        ]
+    },
+    {
+        "name":"Categories",
+        "values":[
+            "Brakes",
+            "Accessories"
+        ]
+    },
+    {
+        "name":"Fits",
+        "values":[
+            "Highball",
+            "Nomad"
+        ]
+    }
+]
