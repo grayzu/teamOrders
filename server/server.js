@@ -10,7 +10,7 @@ Meteor.startup(function() {
   Filters.remove({});
 
   //Import products.json into the Products collection
-  productsJson = JSON.parse(Assets.getText("Products.json"));
+  productsJson = JSON.parse(Assets.getText("products.json"));
   
   productsJson.forEach(function(item){
     Products.insert(item);
@@ -25,7 +25,7 @@ Meteor.startup(function() {
   });
 
   //Import filter categories
-  filtersJson = JSON.parse(Assets.getText("Filters.json"));
+  filtersJson = JSON.parse(Assets.getText("filters.json"));
   
   filtersJson.forEach(function(filter){
     Filters.insert(filter);
@@ -54,17 +54,25 @@ Meteor.publish('orders', function(){
 });
 
 Meteor.methods({
-  'Product.AddtoCart': function(SKU, qty){
+  'Product.AddtoCart': function(id, SKU, Description, qty, additionlData){
     if( Meteor.userId()) {
-      var existingItem = Cart.findOne({userId: Meteor.userId(), SKU: SKU});
+      var existingItem;
+      if(SKU){
+        existingItem = Cart.findOne({userId: Meteor.userId(), SKU: SKU});
+      } else {
+        existingItem = Cart.findOne({userId: Meteor.userId(), Description: Description});
+      }
 
       if(!existingItem) {
-        var productInfo = Products.findOne({SKU:SKU})
-        return Cart.insert({userId: Meteor.userId(), 
+        var productInfo = Products.findOne({Description:Description});
+        
+        return Cart.insert({userId: Meteor.userId(),
                             SKU: SKU, 
                             qty: qty, 
-                            Description: productInfo.Description, 
-                            Price: productInfo.Price});
+                            Description: Description, 
+                            Price: productInfo.Price,
+                            AdditionalData: additionlData
+                          });
       }
       else {
         var newQty = parseInt(existingItem.qty) + parseInt(qty);

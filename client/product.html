@@ -2,18 +2,26 @@
     
      {{#masonryElement 'masonryContainer'}}
      <div class="card">
-        <img class="card-img-top cardImage" src="..." alt="Card image cap">
-        <div class="card-block">
-            <p class="card-text desc">{{ Description}}</p>
-            <h4 class="card-title price">{{currency Price}}</h4>
-            <div class="input-group">
-                <a target="_blank" href={{ MoreInfoURI}} class="btn btn-sm info">More Info</a>
+         <div class="card-img-top">
+             <h5 class="card-title card-sku">{{SKU}}</h5>
+             <h1 class="card-title card-price badge">{{currency Price}}</h1>
+         </div>
+        <img class="cardImage" src="{{ImageURI}}" alt="">
+        <div class="card-details">
+            <p class="card-text desc">{{truncate Description 60}}</p>
+            <button class="desc-info badge">i</button>
+        </div>
+        <div class="row card-block">
+            <div class="col-xs-6">
+                <a target="_blank" href={{ MoreInfoURI}} class="btn btn-sm card-info">More Info</a>
+            </div>
+            <div class="col-xs-2 card-input">
                 <input class="qty itemQty" type="number" name="itemQty" min="1" value="1">
+            </div>
+            <div class="col-xs-2 card-input">
                 <a href="#" class="btn btn-info btn-sm AddtoCart">Add</a>
             </div>
-            
         </div>
     </div>
     {{/masonryElement}} 
-    
 </template>

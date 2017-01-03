@@ -15,8 +15,6 @@ FlowRouter.route('/category/:categoryName/:categoryValue',{
 
 FlowRouter.route('/search',{
     action: function(params, queryParams){
-        console.log("Params:", params);
-        console.log("Query Params:", queryParams);
         FlowLayout.render('layout',{sidebar:'sidebar',main:'resultsBySearch',cart:'cart'});
     }
 });

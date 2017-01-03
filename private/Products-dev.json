@@ -1,8 +1,8 @@
 [
     {
-        "SKU":  "11.5015.048.240",
+        "SKU":  "00.5018.028.350",
         "Brand":  "Avid",
-        "Category":  "Accessories",
+        "Category":  "Rotor",
         "Family":  null,
         "RidingType":  [
                            "Cross Country",
@@ -11,26 +11,24 @@
                            "Gravity"
                        ],
         "Fits":  null,
-        "ImageURI":  null,
-        "MoreInfoURI":  null,
-        "Description":  "MATCHMAKER X CLAMP BLACK RIGHT - BLACK BOLT ( Use with Guide/Level Brakes)",
-        "Price":  999
+        "ImageURI":  "centerlineRotor.png",
+        "MoreInfoURI":  "https://www.sram.com/avid/products/centerline-rotor",
+        "Description":  "CENTERLINE ROTOR - 180mm - 6-BOLT                 ",
+        "Price":  6.9
     },
     {
-        "SKU":  "11.5015.048.140",
-        "Brand":  "Avid",
-        "Category":  "Accessories",
-        "Family":  null,
+        "SKU":  "00.6118.381.005",
+        "Brand":  "SRAM",
+        "Category":  "Cranksets",
+        "Family":  "XX1 Eagle",
         "RidingType":  [
                            "Cross Country",
-                           "Trail",
-                           "Enduro",
-                           "Gravity"
+                           "Trail"
                        ],
         "Fits":  null,
-        "ImageURI":  null,
-        "MoreInfoURI":  null,
-        "Description":  "MATCHMAKER X CLAMP BLACK LEFT - BLACK BOLT (Use with Guide/Level Brakes)",
-        "Price":  8999
+        "ImageURI":  "xx1_eagle_crank.jpg",
+        "MoreInfoURI":  "https://www.sram.com/sram/mountain/products/xx1-eagle-crankset",
+        "Description":  "XC EAGLE - CRANKSET - XX1 EAGLE (PF30) 175mm GOLD 34T (DIRECT MOUNT RING) (NO BB INCLUDED - PLEASE SELECT BB BELOW)",
+        "Price":  224.19
     }
 ]
