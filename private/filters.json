@@ -1,0 +1,73 @@
+[
+    {
+        "name":  "Categories",
+        "values":  [
+                       "Accessories",
+                       "Brakes",
+                       "Rotor",
+                       "Cranksets",
+                       "Trigger Shifters",
+                       "Rear Derailluers",
+                       "Cassettes",
+                       "Chains",
+                       "Bottom Brakets",
+                       "Bars",
+                       "Seatposts",
+                       "Stems",
+                       "Forks",
+                       "Front Derailluers",
+                       "Rear Shocks"
+                   ]
+    },
+    {
+        "name":  "Brands",
+        "values":  [
+                       "Avid",
+                       "SRAM",
+                       "Truvativ",
+                       "RockShox"
+                   ]
+    },
+    {
+        "name":  "RideTypes",
+        "values":  [
+                       "Cross Country",
+                       "Trail",
+                       "Enduro",
+                       "Gravity",
+                       "Road"
+                   ]
+    },
+    {
+        "name":  "Families",
+        "values":  [
+                       "Code",
+                       "Guide Ultimate",
+                       "Level Ultimate",
+                       "XX1 Eagle",
+                       "X01 Eagle",
+                       "X01 DH",
+                       "Descendant",
+                       "Noir",
+                       "Stylo",
+                       "Holzfeller",
+                       "Reverb",
+                       "Boxxer",
+                       "Lyrik",
+                       "Pike",
+                       "Sid",
+                       "Remotes",
+                       "Red",
+                       "Force",
+                       "Deluxe",
+                       "Monarch",
+                       "Vivid Air"
+                   ]
+    },
+    {
+        "name":  "Fits",
+        "values":  {
+
+                   }
+    }
+]
