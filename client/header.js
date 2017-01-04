@@ -1,4 +1,11 @@
 /* jshint esnext: true */
+Template.header.helpers({
+    'email': function(evt, tmpl){
+        return Meteor.user().emails[0].address;
+    }
+});
+
+
 Template.header.events({ 
     'click #searchBtn': function(e) { 
          search();
@@ -8,6 +15,9 @@ Template.header.events({
         
         if(e.keyCode != 13) return;
         search();
+    },
+    'click #signout': function(evt) {
+        Meteor.logout();
     }
 }); 
 

@@ -15,7 +15,32 @@
                     </div>
                 </div>
             </li>
-            {{> loginButtons}}
+            <li>
+            {{#if currentUser}}
+                <div class="navbar-form">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                            {{email}}
+                        </button>
+                        <div class="dropdown-menu row" aria-labelledby="logoutMenu">
+                            <button type="button" class="btn btn-link col-xs-6" id='signout'>Sign out</button>
+                        </div>
+                    </div>
+                </div>
+            {{else}}
+                <div class="navbar-form">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-link dropdown-toggle" id='signin' data-toggle="dropdown">
+                            Sign in/Register
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="loginMenu">
+                            {{> signin}}
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+            </li>
+            <!--{{> loginButtons}}-->
         </ul>
     </div>
 </div>

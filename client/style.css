@@ -137,3 +137,19 @@ li .item-right {
 .fullwidth {
     min-width: 90%;
 }
+
+.tab-pane{
+    min-width: 300px;
+}
+
+.tab-pane {
+    padding: 15px;
+}
+
+.submitSignin {
+    margin-left: 50px;
+}
+
+#login form-group {
+    vertical-align: initial;
+}
