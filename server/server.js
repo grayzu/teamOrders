@@ -5,31 +5,35 @@ import { Meteor } from 'meteor/meteor';
 Meteor.startup(function() {
   // code to run on server at startup
 
-  //Clear out Products and Filters database and load from Json file
-  Products.remove({}); 
-  Filters.remove({});
+  // Only remove and import products if UPDATE_PRODUCTS env var is set to true 
+  if(process.env.UPDATE_PRODUCTS === 'true'){
+    //Clear out Products and Filters database and load from Json file
+    Products.remove({}); 
+    Filters.remove({});
 
-  //Import products.json into the Products collection
-  productsJson = JSON.parse(Assets.getText("products.json"));
-  
-  productsJson.forEach(function(item){
-    Products.insert(item);
-  });
-  //Make sure fields are searchable
-  Products._ensureIndex({
-      "SKU": "text",
-      "Brand": "text",
-      "Category": "text",
-      "Family": "text",
-      "Description": "text"
-  });
+    //Import products.json into the Products collection
+    productsJson = JSON.parse(Assets.getText("products.json"));
+    
+    productsJson.forEach(function(item){
+      Products.insert(item);
+    });
+    //Make sure fields are searchable
+    Products._ensureIndex({
+        "SKU": "text",
+        "Brand": "text",
+        "Category": "text",
+        "Family": "text",
+        "Description": "text"
+    });
 
-  //Import filter categories
-  filtersJson = JSON.parse(Assets.getText("filters.json"));
+    //Import filter categories
+    filtersJson = JSON.parse(Assets.getText("filters.json"));
+    
+    filtersJson.forEach(function(filter){
+      Filters.insert(filter);
+    });
+  }
   
-  filtersJson.forEach(function(filter){
-    Filters.insert(filter);
-  });
   
 });
 

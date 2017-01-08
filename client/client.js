@@ -3,7 +3,14 @@
 import { Meteor } from 'meteor/meteor';
 
 Template.registerHelper('currency', function(value){
-    return '$ ' +  Number(value).toFixed(2); 
+    var sValue = Number(value).toFixed(2)
+    
+    var sRegExp = new RegExp('(-?[0-9]+)([0-9]{3})'); 
+    while(sRegExp.test(sValue)) {
+        sValue = sValue.replace(sRegExp, '$1,$2');
+    }
+
+    return '$ ' + sValue; 
 });
 
 Template.registerHelper('truncate', function(inputString, len){

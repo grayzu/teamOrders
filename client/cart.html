@@ -1,5 +1,5 @@
 <template name="cart">
-    <div class="row">
+    <div class="cartHeader row">
         <div class="col-sm-6">
             <h4>My Cart</h4>
         </div>
@@ -11,26 +11,27 @@
     </div>
 
     {{#if currentUser}}
-        <ul class="list-unstyled">
+    <div class="cartItems">
         {{#each cartItems}}
-            <li>
-                <span class="item">
-                    <span class="item-left">
-                        <span class="item-info">
-                            <span>
-                                <label class="badge">{{qty}}</label>
-                            </span>
-                            <span>{{Description}}</span>
-                        </span>
-                    </span>
-                    <span class="item-right">
-                            {{currency Price}} &nbsp;
-                            <button id="delFromCart" class="btn btn-xs btn-danger pull-right">x</button>
-                    </span>
-                </span>
-            </li>
+        <div class="row cartItem">
+            <div class="cart-qty badge">
+                {{qty}}
+            </div>
+            <div class="cart-desc">
+                {{Description}}
+            </div>
+            <div class="cart-price">
+                {{currency Price}} <i>each</i>
+            </div>
+            <div class="hover-backdrop">
+                <div class="del-button">
+                    <button id="delFromCart" class="btn btn-md btn-danger">Remove</button>
+                </div>
+            </div>
+        </div>
         {{/each}}
-        </ul>
+    </div>
+    
     {{/if}}
     
     {{> checkout}}

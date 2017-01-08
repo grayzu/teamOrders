@@ -11,6 +11,82 @@
                 </div>
                 <div class="modal-body pre-scrollable">
                     {{#if currentUser}}
+                    <table class="table table-striped">
+                        <thead>
+                            <th width="20%">
+                                SKU
+                            </th>
+                            <th width="45%">
+                                Description
+                            </th>
+                            <th width="15%">
+                                Price
+                            </th>
+                            <th width="5%">
+                                Qty
+                            </th>
+                            <th width="15%">
+                                SubTotal
+                            </th>
+                        </thead>
+                        <tbody class="row itemDetails">
+                            {{#each order.itemSummary}}
+                            <tr>
+                                <td>
+                                    {{SKU}}
+                                </td>
+                                <td>
+                                    {{Description}}
+                                </td>
+                                <td>
+                                    {{currency Price}}
+                                </td>
+                                <td>
+                                    {{Qty}}
+                                </td>
+                                <td>
+                                    {{currency SubTotal}}
+                                </td>
+                            </tr>
+                            {{/each}}
+                            <tr>
+                                <td colspan="4">
+                                    <p align="right">Team fee based on percentage of your order:</p>
+                                </td>
+                                <td>
+                                    {{currency order.teamDues.orderPercent}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <p align="right">Annual dues:</p> 
+                                </td>
+                                <td>
+                                    {{currency order.teamDues.dues}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                </td>
+                                <td colspan="2" class="grandTotal">
+                                    <p align="right">{{currency order.grandTotal}}</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {{/if}}
+                </div>
+                <div class="modal-footer">
+                    <div class="summaryText">By clicking the "I agree" button, you agree to pay the above total to the team within 2 weeks of the date the order is placed with SRAM.</div>
+                    <button id="checkoutCloseBtn" type="button" class="btn btn-danger orderDisagree" data-dismiss="modal">I Disagree</button>
+                    <button id="checkoutAgreeBtn" type="button" class="btn btn-success" data-dismiss="modal">I Agree</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--<div class="modal-body pre-scrollable">
+                    {{#if currentUser}}
                     <div class="itemization">
                         <div class="row itemHeaders">
                             <div class="col-sm-2 colHeader">
@@ -72,13 +148,6 @@
                         {{order.grandTotal}}
                     </div>
                     {{/if}}
-                </div>
-                <div class="modal-footer">
-                    <div class="summaryText">You Agree to pay the above within 2 weeks of finalizing this order.</div>
-                    <button id="checkoutCloseBtn" type="button" class="btn btn-danger orderDisagree" data-dismiss="modal">I Disagree</button>
-                    <button id="checkoutAgreeBtn" type="button" class="btn btn-success" data-dismiss="modal">I Agree</button>
-                </div>
-            </div>
-        </div>
-    </div>
+                </div>-->
+
 </template>

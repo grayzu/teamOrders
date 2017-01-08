@@ -14,7 +14,6 @@ Template.cart.events({
     'click .checkoutBtn': function(){
         Meteor.call('Order.summary');
     }
-
     // Disable Finalize button when order is saved until cart is changed.
 });
 
