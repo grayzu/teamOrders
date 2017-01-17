@@ -211,3 +211,45 @@ input[type="number"] {
     font-weight: bold;
     font-style: italic;
 }
+
+/* Orders */
+.orderTitle {
+    background-color: darkblue;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.orderId {
+    background-color: lightgray;
+    font-size: medium;
+}
+
+/* Team Summary */
+.teamSummaryTitle {
+    padding:1rem;
+    background-color: darkblue;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.teamSummaryHeader {
+    background-color: lightgray;
+    font-size: medium;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.summaryItem:nth-child(even) {
+    background-color: lightcyan;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.teamTotalAmt {
+    font-weight: bolder;
+    font-style: italic;
+}

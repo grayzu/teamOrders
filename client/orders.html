@@ -1,0 +1,97 @@
+
+<template name="memberOrders">
+    {{#each allOrders}}
+        <div class="orderBlock">
+            <div class="row">
+                <div class="col-xs-12 orderTitle">
+                    {{Owner.profile.fullName}}'s Order
+                </div>
+            </div>
+            {{> orderDetails}}
+        </div>
+    {{/each}}
+</template>
+
+<template name="myOrders">
+    <div class="orderBlock">
+        <div class="row">
+            <div class="col-xs-12 orderTitle">
+                My Orders
+            </div>
+        </div>
+        {{#each allOrders}}
+            {{> orderDetails}}
+        {{/each}}
+    </div>
+</template>
+
+<template name="orderDetails">
+    <div class="row">
+        <div class="col-xs-12 orderId">
+            OrderId: {{_id}}
+        </div>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <th width="20%">
+                SKU
+            </th>
+            <th width="45%">
+                Description
+            </th>
+            <th width="15%">
+                Price
+            </th>
+            <th width="5%">
+                Qty
+            </th>
+            <th width="15%">
+                SubTotal
+            </th>
+        </thead>
+        <tbody class="row itemDetails">
+            {{#each itemSummary}}
+            <tr>
+                <td>
+                    {{SKU}}
+                </td>
+                <td>
+                    {{Description}}
+                </td>
+                <td>
+                    {{currency Price}}
+                </td>
+                <td>
+                    {{Qty}}
+                </td>
+                <td>
+                    {{currency SubTotal}}
+                </td>
+            </tr>
+            {{/each}}
+            <tr>
+                <td colspan="4">
+                    <p align="right">Team fee based on percentage of your order:</p>
+                </td>
+                <td>
+                    {{currency teamDues.orderPercent}}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <p align="right">Annual dues:</p> 
+                </td>
+                <td>
+                    {{currency teamDues.dues}}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                </td>
+                <td colspan="2" class="grandTotal">
+                    <p align="right">{{currency grandTotal}}</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</template>

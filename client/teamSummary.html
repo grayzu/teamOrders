@@ -1,0 +1,45 @@
+<template name="teamSummary">
+    <div class="teamSummary">
+        <div class="row teamSummaryTitle">
+            2017 SRAM order summary
+        </div>
+        <div class="row teamSummaryHeader">
+            <div class="col-xs-2">
+                SKU
+            </div>
+            <div class="col-xs-7">
+                Description
+            </div>
+            <div class="col-xs-1">
+                Qty
+            </div>
+            <div class="col-xs-2">
+                Total
+            </div>
+        </div>
+        {{#each orderedProducts}}
+        <div class="row summaryItem">
+            <div class="col-xs-2">
+                {{SKU}}
+            </div>
+            <div class="col-xs-7">
+                {{Description}}
+            </div>
+            <div class="col-xs-1">
+                {{Qty}}
+            </div>
+            <div class="col-xs-2">
+                {{currency (total price Qty)}}
+            </div>
+        </div>
+        {{/each}}
+        <div class="row teamTotal">
+            <div class="col-xs-10">
+
+            </div>
+            <div class="col-xs-2 teamTotalAmt">
+                {{currency teamTotal}}
+            </div>
+        </div>
+    </div>
+</template>

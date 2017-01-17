@@ -26,3 +26,6 @@ twbs:bootstrap
 chuikoff:accounts-ui-bootstrap-4
 voodoohop:masonrify
 peppelg:bootstrap-3-modal
+alanning:roles
+dburles:collection-helpers
+session

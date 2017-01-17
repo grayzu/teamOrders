@@ -2,8 +2,7 @@ Template.signin.events({
     'submit .signin': function(evt){
         var email = evt.target.email.value;
         var password = evt.target.password.value;
-        console.log(email);
-        console.log(password);
+        
         evt.preventDefault();
 
         Meteor.loginWithPassword(email, password, function(err){

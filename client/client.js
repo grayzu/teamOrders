@@ -18,3 +18,7 @@ Template.registerHelper('truncate', function(inputString, len){
     var newString = inputString.substring(0,len) + ellipses;
     return new Spacebars.SafeString(newString);
 });
+
+Template.registerHelper('total', function(price, qty){
+    return parseFloat(price) * parseInt(qty);
+});

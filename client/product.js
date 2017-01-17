@@ -1,9 +1,5 @@
 import { Blaze } from 'meteor/blaze';
 
-Template.product.helpers({
-    
-})
-
 Template.product.events({
     'click .AddtoCart': function(evt, tmpl){
         event.preventDefault();
@@ -65,6 +61,8 @@ Template.product.events({
             `
             Modal.show('genericModalDialog',{Title: 'Rear Shock Additional Details', AddtoCart: true, body: body, qty: tmpl.$('.itemQty').val(), data: tmpl.data});
         }
+
+        // Session.set('cartDirty', true);
     },
     'click .desc-info': function(evt, tmpl){
         var body = `

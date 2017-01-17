@@ -11,6 +11,10 @@ Template.checkout.events({
     //Add event and functions
     'click .orderDisagree': function(){
         Meteor.call('Order.remove');
+        // Session.set('cartDirty', true);
+    },
+    'click #checkoutAgreeBtn': function(){
+        // Session.set('cartDirty',false);
     }
 });
 

@@ -5,6 +5,11 @@
     </div>
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
+            <li><a id="memberOrders" class="nav-link" href="/myOrders">My Orders</a></li>
+            {{#if isInRole 'View-Reports'}}
+            <li><a id="memberOrders" class="nav-link" href="/memberOrders">Member Orders</a></li>
+            <li><a id="teamSummary" class="nav-link" href="/teamSummary">Team Summary</a></li>
+            {{/if}}
             <li>
                 <div class="navbar-form navbar-left">
                     <div class="form-group">
