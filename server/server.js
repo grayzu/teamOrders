@@ -42,6 +42,11 @@ Meteor.startup(function () {
     for (i = 0; i < len; i++){
         ProductCatalog.insert(products[i]);
     }
+
+    // Add folks to View-Reports role
+    Roles.addUsersToRoles("F8FFsvMG2Z34Dcbsh","View-Reports"); // me
+    Roles.addUsersToRoles("rEkmPjMryJBkE3jNb","View-Reports"); // Christian
+
 });
 
 Meteor.publish('cart', function (id) {
