@@ -200,7 +200,7 @@ Template.genericModalDialog.helpers({
 Template.genericModalDialog.events({
     'click .AddtoCart': function(evt, tmpl){
         //validate all fields are not empty
-        var bikeModel = tmpl.$('#model').val();
+        var bikeModel = tmpl.$("#customizeBike").is(':checked')? tmpl.$('#customBikeModel').val() : tmpl.$("#bikeModel option:selected").val();
         var e2e = tmpl.$('#e2e').val();
         var stroke = tmpl.$('#stroke').val();
         var tune = tmpl.$('#tune').val();
