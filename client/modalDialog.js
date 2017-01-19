@@ -1,5 +1,4 @@
-Template.genericModalDialog.helpers({
-    shockInfo: [
+var shockInfo = [
         {
             "Bike": "V10C 26in",
             "Bike travel": "8.5/10",
@@ -116,8 +115,8 @@ Template.genericModalDialog.helpers({
             "Upper and Lower hardware": "8 x22",
             "Eye to eye": 7.25,
             "Stroke": 1.75,
-            "E2E mm": null,
-            "Stroke mm": null,
+            "E2E mm": "??",
+            "Stroke mm": "??",
             "Leverage Ratio": ""
         },
         {
@@ -188,11 +187,14 @@ Template.genericModalDialog.helpers({
             "Upper and Lower hardware": "9 x22",
             "Eye to eye": 8.5,
             "Stroke": 2.5,
-            "E2E mm": null,
-            "Stroke mm": null,
+            "E2E mm": "??",
+            "Stroke mm": "??",
             "Leverage Ratio": "2.2:1"
         }
     ]
+
+Template.genericModalDialog.helpers({
+    shockInfo: shockInfo
 });
 
 Template.genericModalDialog.events({
@@ -226,6 +228,21 @@ Template.genericModalDialog.events({
         
     },
     'change #bikeModel': function(evt, tmpl){
-        alert(tmpl.$("#bikeModel").val());
+        var selectedBike = shockInfo.find(function(item){return item.Bike === evt.currentTarget.value;});
+        tmpl.$('#e2e').val(`${selectedBike["E2E mm"]}mm / ${selectedBike["Eye to eye"]}"`);
+        tmpl.$('#stroke').val(`${selectedBike["Stroke mm"]}mm / ${selectedBike.Stroke}"`);
+        tmpl.$('#tune').val(selectedBike.Tune);
+        tmpl.$('#airCan').val(selectedBike["Air can"]);
+        tmpl.$('#volumespacer').val("unknown");
+        tmpl.$('#upperhardware').val(selectedBike["Upper and Lower hardware"]);
+        tmpl.$('#lowerhardware').val(selectedBike["Upper and Lower hardware"]);
+        tmpl.$('#coilspring').attr("placeholder", "Spring wieght (in lbs) or N/A");
+        tmpl.$('#leverageratio').val(selectedBike["Leverage Ratio"]);
+        tmpl.$('#averageleverageratio').val("unknown");
+        tmpl.$('#leverageratiosag').val("unknown");
+    },
+    'change #customizeBike': function(evt, tmpl){
+        $("#customBikeModel").toggleClass("visible hidden");
+        $("#bikeModel").toggleClass("visible hidden");
     }
-});
+}); 

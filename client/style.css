@@ -253,3 +253,11 @@ input[type="number"] {
     font-weight: bolder;
     font-style: italic;
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
