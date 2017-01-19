@@ -44,8 +44,8 @@ Meteor.startup(function () {
     }
 
     // Add folks to View-Reports role
-    // "F8FFsvMG2Z34Dcbsh" // me
-    // "rEkmPjMryJBkE3jNb" // Christian
+    Roles.addUsersToRoles("F8FFsvMG2Z34Dcbsh","View-Reports"); // me
+    Roles.addUsersToRoles("rEkmPjMryJBkE3jNb","View-Reports"); // Christian
 
 });
 
