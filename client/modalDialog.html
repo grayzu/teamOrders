@@ -12,6 +12,8 @@
                             <h4 class="modal-title">{{Title}}</h4>
                         </div>
                     <div class="modal-body">
+                        {{#if AddtoCart}}
+                        <!--body of Shock dialog-->
                         <form class="form-inline">
                             <div class="form-group shockaddedinfo">
                                 <input type="checkbox" id="customizeBike"> Customize Bike properties
@@ -72,7 +74,12 @@
                                     <input type="text" class="form-control fullwidth" id="leverageratiosag">
                                 </div>
                             </fieldset>
-                        </form>            
+                        </form> 
+                        {{else}}
+                            <!--body of any other dialog-->
+                            {{{body}}}           
+                        {{/if}}
+                        
                     </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
