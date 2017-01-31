@@ -1,45 +1,47 @@
 <template name="teamSummary">
-    <div class="teamSummary">
-        <div class="row teamSummaryTitle">
+    <table class="teamSummary table-striped">
+        <tr class="row teamSummaryTitle">
+            <td colspan="4">
             2017 SRAM order summary
-        </div>
-        <div class="row teamSummaryHeader">
-            <div class="col-xs-2">
+            </td>
+        </tr>
+        <tr class="row teamSummaryHeader">
+            <td width="20%">
                 SKU
-            </div>
-            <div class="col-xs-7">
+            </td>
+            <td width="60%">
                 Description
-            </div>
-            <div class="col-xs-1">
+            </td>
+            <td width="5%">
                 Qty
-            </div>
-            <div class="col-xs-2">
+            </td>
+            <td width="15%">
                 Total
-            </div>
-        </div>
+            </td>
+        </tr>
         {{#each orderedProducts}}
-        <div class="row summaryItem">
-            <div class="col-xs-2">
+        <tr class="row summaryItem">
+            <td>
                 {{SKU}}
-            </div>
-            <div class="col-xs-7">
+            </td>
+            <td>
                 {{Description}}
-            </div>
-            <div class="col-xs-1">
+            </td>
+            <td>
                 {{Qty}}
-            </div>
-            <div class="col-xs-2">
+            </td>
+            <td>
                 {{currency (total price Qty)}}
-            </div>
-        </div>
+            </td>
+        </tr>
         {{/each}}
-        <div class="row teamTotal">
-            <div class="col-xs-10">
+        <tr class="row teamTotal">
+            <td colspan="3">
 
-            </div>
-            <div class="col-xs-2 teamTotalAmt">
+            </td>
+            <td class="teamTotalAmt">
                 {{currency teamTotal}}
-            </div>
-        </div>
-    </div>
+            </td>
+        </tr>
+    </table>
 </template>
